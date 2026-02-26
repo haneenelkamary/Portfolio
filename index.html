@@ -1,2 +1,152 @@
-<h1>Haneen Portfolio 🎀</h1>
-<p>My site is working!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haneen Elkamary Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {margin:0; padding:0; box-sizing:border-box; font-family:'Comfortaa', cursive;}
+        body {background: #FFF8F0; color: #333;}
+        a {text-decoration: none; color: #FF7F50;}
+        h1, h2, h3 {color: #FF6F61;}
+
+        .container {width: 90%; max-width: 1000px; margin: 0 auto; padding: 20px;}
+
+        header {text-align: center; padding: 50px 0;}
+        header h1 {font-size: 2.8em;}
+        header p {font-size: 1.2em; margin-top: 10px;}
+
+        section {margin: 50px 0;}
+        section h2 {border-bottom: 2px solid #FFB6B9; padding-bottom: 10px; margin-bottom: 20px;}
+
+        /* Projects */
+        .projects {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
+        .project-card {background: #FFF0F5; border-radius: 15px; padding: 20px; cursor: pointer; transition: transform 0.3s;}
+        .project-card:hover {transform: translateY(-5px);}
+        .project-card h3 {margin-bottom: 10px;}
+        .project-card p {margin-bottom: 10px; font-size: 0.95em;}
+        .tech {font-size: 0.85em; color: #FF7F50; font-weight: bold;}
+
+        /* Popup */
+        .popup {display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center;}
+        .popup-content {background: #FFF8F0; padding: 30px; border-radius: 20px; width: 90%; max-width: 500px; position: relative; text-align: center;}
+        .popup-content img {max-width: 100%; border-radius: 15px; margin-bottom: 15px;}
+        .close-btn {position: absolute; top:10px; right:15px; font-size: 1.5em; cursor: pointer; color: #FF6F61;}
+
+        /* Skills */
+        .skills {display: flex; flex-wrap: wrap; gap: 10px;}
+        .skill {background: #FFDFDF; padding: 8px 15px; border-radius: 20px; font-weight: bold; color: #FF6F61;}
+
+        /* Contact */
+        .contact a {display: inline-block; margin-right: 15px; margin-top: 10px; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Haneen Elkamary</h1>
+            <p>AI & Robotics Enthusiast | Python, C++, Arduino</p>
+        </header>
+
+        <!-- About Me -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I’m an AI student passionate about turning ideas into real-world projects that connect software with hardware. I enjoy building innovative solutions using Python, C++, and Arduino, focusing on clean and structured code.</p>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project-card" data-title="Line Following Robot" data-desc="Developed a robot using Arduino and IR sensors for real-time path detection." data-tech="Arduino, Embedded Systems, C++" data-img="">
+                    <h3>Line Following Robot</h3>
+                    <p class="tech">Arduino, Embedded Systems, C++</p>
+                </div>
+                <div class="project-card" data-title="Advanced QR Code Scanner" data-desc="Built a real-time QR code detection system using computer vision." data-tech="Python, OpenCV" data-img="">
+                    <h3>Advanced QR Code Scanner</h3>
+                    <p class="tech">Python, OpenCV</p>
+                </div>
+                <div class="project-card" data-title="Regression on E-commerce Customers" data-desc="Performed data analysis and regression modeling to predict customer behavior." data-tech="Python, Pandas, Scikit-learn" data-img="">
+                    <h3>Regression on E-commerce Customers</h3>
+                    <p class="tech">Python, Pandas, Scikit-learn</p>
+                </div>
+                <div class="project-card" data-title="Advanced Calculator (OOP)" data-desc="Developed a modular calculator using Object-Oriented Programming." data-tech="Python" data-img="">
+                    <h3>Advanced Calculator (OOP)</h3>
+                    <p class="tech">Python</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="skill">Python</span>
+                <span class="skill">C++</span>
+                <span class="skill">Arduino</span>
+                <span class="skill">OpenCV</span>
+                <span class="skill">Data Analysis</span>
+                <span class="skill">Machine Learning</span>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact">
+                <a href="mailto:example@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/haneen-elkamary?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+                <a href="https://github.com/haneenelkamary" target="_blank">GitHub</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <h3 id="popupTitle"></h3>
+            <img id="popupImg" src="" alt="">
+            <p id="popupDesc"></p>
+            <p class="tech" id="popupTech"></p>
+        </div>
+    </div>
+
+    <script>
+        const projects = document.querySelectorAll('.project-card');
+        const popup = document.getElementById('popup');
+        const popupTitle = document.getElementById('popupTitle');
+        const popupDesc = document.getElementById('popupDesc');
+        const popupTech = document.getElementById('popupTech');
+        const popupImg = document.getElementById('popupImg');
+        const closeBtn = document.getElementById('closeBtn');
+
+        projects.forEach(project => {
+            project.addEventListener('click', () => {
+                popupTitle.textContent = project.dataset.title;
+                popupDesc.textContent = project.dataset.desc;
+                popupTech.textContent = project.dataset.tech;
+                if(project.dataset.img) {
+                    popupImg.src = project.dataset.img;
+                    popupImg.style.display = 'block';
+                } else {
+                    popupImg.style.display = 'none';
+                }
+                popup.style.display = 'flex';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+
+        window.addEventListener('click', e => {
+            if(e.target == popup) popup.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
+
