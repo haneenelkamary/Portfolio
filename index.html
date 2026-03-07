@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Haneen Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<title>Haneen Elkamary | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
---bg:#f5f7ff;
---text:#333;
---card:#fff;
+--bg:#f4f6ff;
+--text:#222;
+--card:#ffffff;
+--accent:#ff4da6;
 }
 
 .dark{
 --bg:#0f172a;
---text:#fff;
+--text:#ffffff;
 --card:#1e293b;
+--accent:#ff4da6;
+}
+
+*{
+box-sizing:border-box;
 }
 
 body{
@@ -30,9 +38,42 @@ transition:.4s;
 scroll-behavior:smooth;
 }
 
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:var(--card);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+z-index:100;
+}
+
+nav h3{
+margin:0;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:var(--text);
+font-weight:500;
+}
+
+.toggle{
+cursor:pointer;
+background:var(--accent);
+color:white;
+padding:6px 12px;
+border-radius:15px;
+}
+
 header{
 text-align:center;
-padding:40px 20px;
+padding-top:120px;
+padding-bottom:60px;
 }
 
 .profile{
@@ -45,28 +86,30 @@ animation:float 3s infinite ease-in-out;
 50%{transform:translateY(-10px);}
 }
 
-.toggle{
-position:fixed;
-top:20px;
-right:20px;
-cursor:pointer;
-background:#ff4da6;
-color:#fff;
-padding:10px 15px;
-border-radius:20px;
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 18px;
+background:var(--accent);
+color:white;
+border-radius:25px;
+text-decoration:none;
+font-size:14px;
 }
 
 section{
-padding:50px 10%;
+padding:70px 10%;
 }
 
-h2{text-align:center;}
+h2{
+text-align:center;
+margin-bottom:30px;
+}
 
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
-margin-top:30px;
 }
 
 .card{
@@ -75,11 +118,10 @@ border-radius:20px;
 overflow:hidden;
 box-shadow:0 10px 20px rgba(0,0,0,0.1);
 transition:.4s;
-cursor:pointer;
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-8px);
 }
 
 .card img{
@@ -89,18 +131,7 @@ object-fit:cover;
 }
 
 .card-content{
-padding:15px;
-}
-
-.btn{
-display:inline-block;
-margin-top:10px;
-padding:8px 15px;
-background:#ff4da6;
-color:white;
-border-radius:20px;
-text-decoration:none;
-font-size:14px;
+padding:20px;
 }
 
 .skills{
@@ -109,10 +140,22 @@ text-align:center;
 
 .skills span{
 display:inline-block;
-margin:8px;
-padding:10px 15px;
-background:#ffb3d9;
+margin:10px;
+padding:10px 16px;
+background:#ffc6e6;
 border-radius:20px;
+font-size:14px;
+}
+
+.contact{
+text-align:center;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:var(--card);
+margin-top:40px;
 }
 
 .popup{
@@ -136,100 +179,159 @@ max-width:400px;
 text-align:center;
 }
 
-.cv{
-text-align:center;
-margin-top:20px;
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="toggle" onclick="mode()">🌙</div>
+<nav>
+
+<h3>Haneen</h3>
+
+<div>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+<span class="toggle" onclick="mode()">🌙</span>
+</div>
+
+</nav>
 
 <header>
 
-<img src="profile.jpg" class="profile">
+<img src="images/profile.jpg" class="profile">
 
 <h1>Haneen Elkamary</h1>
+
 <p>AI Student | Robotics | Data Science</p>
 
-<div>
-<a href="https://github.com/haneenelkamary" class="btn">GitHub</a>
-<a href="https://www.linkedin.com/in/haneen-elkamary" class="btn">LinkedIn</a>
-</div>
+<br>
 
-<div class="cv">
+<a href="https://github.com/haneenelkamary" class="btn">GitHub</a>
+<a href="https://linkedin.com" class="btn">LinkedIn</a>
+
+<br><br>
+
 <a href="cv.pdf" class="btn">Download CV</a>
-</div>
 
 </header>
 
-<section>
+<section id="projects">
 
 <h2>Projects</h2>
 
 <div class="projects">
 
-<div class="card" onclick="openPopup('Line Following Robot','Arduino robot for real-time path detection.')">
-<img src="ROBOT.jpg">
+<div class="card" onclick="openPopup('Line Following Robot','Arduino robot that detects and follows a black line in real time.')">
+
+<img src="images/project1.png">
+
 <div class="card-content">
+
 <h3>Line Following Robot</h3>
+
 <a href="#" class="btn">GitHub</a>
+
 </div>
 </div>
 
-<div class="card" onclick="openPopup('QR Code Scanner','Real-time detection using OpenCV.')">
-<img src="QR Scanner.jpg">
+<div class="card" onclick="openPopup('QR Code Scanner','Real-time QR detection using Python and OpenCV.')">
+
+<img src="images/project2.png">
+
 <div class="card-content">
+
 <h3>QR Code Scanner</h3>
+
 <a href="#" class="btn">GitHub</a>
+
 </div>
 </div>
 
-<div class="card" onclick="openPopup('Regression Analysis','Predicting customer behavior.')">
-<img src="ML.jpg">
+<div class="card" onclick="openPopup('Regression Analysis','Machine learning model predicting customer behavior.')">
+
+<img src="images/project3.png">
+
 <div class="card-content">
+
 <h3>Regression Project</h3>
+
 <a href="#" class="btn">GitHub</a>
+
 </div>
 </div>
 
-<div class="card" onclick="openPopup('OOP Calculator','Python modular calculator.')">
-<img src="Calculator.jpg">
+<div class="card" onclick="openPopup('OOP Calculator','Python calculator built using object oriented programming.')">
+
+<img src="images/project4.png">
+
 <div class="card-content">
+
 <h3>OOP Calculator</h3>
+
 <a href="#" class="btn">GitHub</a>
+
 </div>
+
 </div>
 
 </div>
 
 </section>
 
-<section>
+<section id="skills">
 
 <h2>Skills</h2>
 
 <div class="skills">
+
 <span>Python</span>
 <span>C++</span>
 <span>Arduino</span>
 <span>OpenCV</span>
 <span>Machine Learning</span>
 <span>Data Analysis</span>
+
 </div>
 
 </section>
 
-<div class="popup" id="popup">
-<div class="popup-content">
-<h3 id="title"></h3>
-<p id="desc"></p>
-<br>
-<button onclick="closePopup()" class="btn">Close</button>
+<section id="contact">
+
+<h2>Contact</h2>
+
+<div class="contact">
+
+<p>Email: haneen@example.com</p>
+
+<a href="https://github.com/haneenelkamary" class="btn">GitHub</a>
+
+<a href="https://linkedin.com" class="btn">LinkedIn</a>
+
 </div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Haneen Elkamary</p>
+
+</footer>
+
+<div class="popup" id="popup">
+
+<div class="popup-content">
+
+<h3 id="title"></h3>
+
+<p id="desc"></p>
+
+<br>
+
+<button onclick="closePopup()" class="btn">Close</button>
+
+</div>
+
 </div>
 
 <script>
@@ -252,5 +354,3 @@ document.getElementById("popup").style.display="none"
 
 </body>
 </html>
-
-
