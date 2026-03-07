@@ -176,19 +176,33 @@ margin:10px 0;
 
 /* CONTACT */
 
-.contact{
-text-align:center;
-}
+<section id="contact">
 
-.contact input,
-.contact textarea{
-width:80%;
-max-width:400px;
-padding:10px;
-margin:8px;
-border-radius:10px;
-border:1px solid #ccc;
-}
+<h2>Contact Me</h2>
+
+<div class="contact">
+
+<form action="https://formspree.io/f/xlgpeyvk" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<br>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<br>
+
+<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+<br>
+
+<button type="submit" class="btn">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
 
 /* FOOTER */
 
@@ -458,3 +472,4 @@ document.getElementById("popup").style.display="none"
 </body>
 </html>
 ```
+
