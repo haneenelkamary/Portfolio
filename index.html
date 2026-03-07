@@ -1,18 +1,14 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Haneen Elkamary | AI Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
 --bg:#f4f6ff;
 --text:#222;
@@ -40,7 +36,6 @@ scroll-behavior:smooth;
 }
 
 /* NAVBAR */
-
 nav{
 position:fixed;
 top:0;
@@ -70,7 +65,6 @@ border-radius:15px;
 }
 
 /* HEADER */
-
 header{
 text-align:center;
 padding-top:120px;
@@ -99,7 +93,6 @@ font-size:14px;
 }
 
 /* SECTIONS */
-
 section{
 padding:80px 10%;
 }
@@ -110,7 +103,6 @@ margin-bottom:30px;
 }
 
 /* ABOUT */
-
 .about{
 max-width:700px;
 margin:auto;
@@ -119,7 +111,6 @@ line-height:1.7;
 }
 
 /* PROJECTS */
-
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -150,7 +141,6 @@ padding:20px;
 }
 
 /* SKILLS */
-
 .skills{
 text-align:center;
 }
@@ -164,7 +154,6 @@ border-radius:20px;
 }
 
 /* EXPERIENCE */
-
 .experience{
 max-width:600px;
 margin:auto;
@@ -175,37 +164,21 @@ margin:10px 0;
 }
 
 /* CONTACT */
+.contact{
+text-align:center;
+}
 
-<section id="contact">
-
-<h2>Contact Me</h2>
-
-<div class="contact">
-
-<form action="https://formspree.io/f/xlgpeyvk" method="POST">
-
-<input type="text" name="name" placeholder="Your Name" required>
-
-<br>
-
-<input type="email" name="email" placeholder="Your Email" required>
-
-<br>
-
-<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-
-<br>
-
-<button type="submit" class="btn">Send Message</button>
-
-</form>
-
-</div>
-
-</section>
+.contact input,
+.contact textarea{
+width:80%;
+max-width:400px;
+padding:10px;
+margin:8px;
+border-radius:10px;
+border:1px solid #ccc;
+}
 
 /* FOOTER */
-
 footer{
 text-align:center;
 padding:25px;
@@ -213,7 +186,6 @@ background:var(--card);
 }
 
 /* POPUP */
-
 .popup{
 position:fixed;
 top:0;
@@ -234,242 +206,177 @@ width:90%;
 max-width:400px;
 text-align:center;
 }
-
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-
 <h3>Haneen</h3>
-
 <div>
-
 <a href="#about" onclick="scrollToSection(event,'about')">About</a>
 <a href="#skills" onclick="scrollToSection(event,'skills')">Skills</a>
 <a href="#projects" onclick="scrollToSection(event,'projects')">Projects</a>
 <a href="#experience" onclick="scrollToSection(event,'experience')">Experience</a>
 <a href="#contact" onclick="scrollToSection(event,'contact')">Contact</a>
-
 <span class="toggle" onclick="mode()" id="themeBtn">🌙</span>
-
 </div>
-
 </nav>
 
+<!-- HEADER -->
 <header>
-
 <img src="profile.jpg" class="profile">
-
 <h1>Haneen Elkamary</h1>
-
 <p>Artificial Intelligence Student | Robotics | Machine Learning</p>
-
 <a href="https://github.com/haneenelkamary" class="btn">GitHub</a>
-
 <a href="https://linkedin.com" class="btn">LinkedIn</a>
-
 <br><br>
-
 <a href="cv.pdf" class="btn">Download CV</a>
-
 </header>
 
+<!-- ABOUT -->
 <section id="about">
-
 <h2>About Me</h2>
-
 <div class="about">
-
 <p>
-I am an Artificial Intelligence student passionate about robotics,
-machine learning, and data analysis. I enjoy building real-world
-projects using Python, C++, and Arduino.
+I am an Artificial Intelligence student passionate about robotics, machine learning, and data analysis. I enjoy building real-world projects using Python, C++, and Arduino.
 </p>
-
 </div>
-
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
-
 <h2>Skills</h2>
-
 <div class="skills">
-
 <span>Python</span>
 <span>C++</span>
 <span>Arduino</span>
 <span>Machine Learning</span>
 <span>Data Analysis</span>
 <span>OpenCV</span>
-
 </div>
-
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
-
 <h2>Projects</h2>
-
 <div class="projects">
-
 <div class="card" onclick="openPopup('Line Following Robot','Arduino robot that follows a black line.')">
-
 <img src="ROBOT.jpg">
-
-<div class="card-content">
-
-<h3>Line Following Robot</h3>
-
+<div class="card-content"><h3>Line Following Robot</h3></div>
 </div>
-
-</div>
-
 <div class="card" onclick="openPopup('QR Code Scanner','Real time QR detection using OpenCV.')">
-
 <img src="QR Scanner.jpg">
-
-<div class="card-content">
-
-<h3>QR Scanner</h3>
-
+<div class="card-content"><h3>QR Scanner</h3></div>
 </div>
-
-</div>
-
 <div class="card" onclick="openPopup('Regression Model','Machine learning regression analysis.')">
-
 <img src="ML.jpg">
-
-<div class="card-content">
-
-<h3>ML Project</h3>
-
+<div class="card-content"><h3>ML Project</h3></div>
 </div>
-
-</div>
-
 <div class="card" onclick="openPopup('OOP Calculator','Calculator built using Python OOP.')">
-
 <img src="Calculator.jpg">
-
-<div class="card-content">
-
-<h3>Calculator</h3>
-
+<div class="card-content"><h3>Calculator</h3></div>
 </div>
-
 </div>
-
-</div>
-
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience">
-
 <h2>Experience</h2>
-
 <ul class="experience">
-
 <li>AI Student – Faculty of Artificial Intelligence</li>
-
 <li>Arduino Robotics Projects</li>
-
 <li>Cyber Security Training (NTI)</li>
-
 <li>Python Projects & Data Analysis</li>
-
 </ul>
-
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
-
-<h2>Contact</h2>
-
+<h2>Contact Me</h2>
 <div class="contact">
-
-<input type="text" placeholder="Your Name">
-
+<form id="contactForm" action="https://formspree.io/f/xlgpeyvk" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
 <br>
-
-<input type="email" placeholder="Your Email">
-
+<input type="email" name="email" placeholder="Your Email" required>
 <br>
-
-<textarea placeholder="Your Message"></textarea>
-
+<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
 <br>
-
-<button class="btn">Send</button>
-
+<button type="submit" class="btn">Send Message</button>
+</form>
+<p id="successMsg" style="color:green; display:none; margin-top:10px;">
+Your message has been sent successfully!
+</p>
 </div>
-
 </section>
 
 <footer>
-
 <p>© 2026 Haneen Elkamary</p>
-
 </footer>
 
+<!-- POPUP -->
 <div class="popup" id="popup">
-
 <div class="popup-content">
-
 <h3 id="title"></h3>
-
 <p id="desc"></p>
-
 <br>
-
 <button onclick="closePopup()" class="btn">Close</button>
-
 </div>
-
 </div>
 
 <script>
-
+// Smooth Scroll
 function scrollToSection(e,id){
 e.preventDefault()
 document.getElementById(id).scrollIntoView({behavior:"smooth"})
 }
 
+// Dark/Light Mode
 function mode(){
-
 document.body.classList.toggle("dark")
-
 let btn=document.getElementById("themeBtn")
-
-if(document.body.classList.contains("dark")){
-btn.innerHTML="☀️"
-}
-else{
-btn.innerHTML="🌙"
+btn.innerHTML = document.body.classList.contains("dark") ? "☀️" : "🌙"
 }
 
-}
-
+// Projects Popup
 function openPopup(t,d){
-
 document.getElementById("popup").style.display="flex"
-
 title.innerText=t
-
 desc.innerText=d
-
 }
-
 function closePopup(){
 document.getElementById("popup").style.display="none"
 }
 
+// Contact Form with success message
+const form = document.getElementById("contactForm");
+const successMsg = document.getElementById("successMsg");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault(); // منع إعادة تحميل الصفحة
+    const formData = new FormData(form);
+    fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        if(response.ok){
+            successMsg.style.display = "block";
+            form.reset();
+            setTimeout(()=>{successMsg.style.display="none"},3000);
+        } else {
+            response.json().then(data=>{
+                alert("Error: " + (data.error || "Something went wrong"));
+            });
+        }
+    })
+    .catch(error=>{
+        alert("Error: " + error);
+    });
+});
 </script>
 
 </body>
 </html>
-```
-
