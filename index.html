@@ -1,5 +1,7 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -22,7 +24,6 @@
 --bg:#0f172a;
 --text:#ffffff;
 --card:#1e293b;
---accent:#ff4da6;
 }
 
 *{
@@ -38,6 +39,8 @@ transition:.4s;
 scroll-behavior:smooth;
 }
 
+/* NAVBAR */
+
 nav{
 position:fixed;
 top:0;
@@ -49,10 +52,6 @@ align-items:center;
 padding:15px 8%;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
 z-index:100;
-}
-
-nav h3{
-margin:0;
 }
 
 nav a{
@@ -69,6 +68,8 @@ color:white;
 padding:6px 12px;
 border-radius:15px;
 }
+
+/* HEADER */
 
 header{
 text-align:center;
@@ -97,6 +98,8 @@ text-decoration:none;
 font-size:14px;
 }
 
+/* SECTIONS */
+
 section{
 padding:70px 10%;
 }
@@ -105,6 +108,8 @@ h2{
 text-align:center;
 margin-bottom:30px;
 }
+
+/* PROJECTS */
 
 .projects{
 display:grid;
@@ -134,6 +139,8 @@ object-fit:cover;
 padding:20px;
 }
 
+/* SKILLS */
+
 .skills{
 text-align:center;
 }
@@ -147,9 +154,13 @@ border-radius:20px;
 font-size:14px;
 }
 
+/* CONTACT */
+
 .contact{
 text-align:center;
 }
+
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -157,6 +168,8 @@ padding:25px;
 background:var(--card);
 margin-top:40px;
 }
+
+/* POPUP */
 
 .popup{
 position:fixed;
@@ -184,22 +197,31 @@ text-align:center;
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
 
 <h3>Haneen</h3>
 
 <div>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
-<span class="toggle" onclick="mode()">🌙</span>
+
+<a href="#projects" onclick="scrollToSection(event,'projects')">Projects</a>
+
+<a href="#skills" onclick="scrollToSection(event,'skills')">Skills</a>
+
+<a href="#contact" onclick="scrollToSection(event,'contact')">Contact</a>
+
+<span class="toggle" onclick="mode()" id="themeBtn">🌙</span>
+
 </div>
 
 </nav>
 
+<!-- HEADER -->
+
 <header>
 
-<img src="profile.jpg" class="profile">
+<img src="images/profile.jpg" class="profile">
 
 <h1>Haneen Elkamary</h1>
 
@@ -208,6 +230,7 @@ text-align:center;
 <br>
 
 <a href="https://github.com/haneenelkamary" class="btn">GitHub</a>
+
 <a href="https://linkedin.com" class="btn">LinkedIn</a>
 
 <br><br>
@@ -216,15 +239,17 @@ text-align:center;
 
 </header>
 
+<!-- PROJECTS -->
+
 <section id="projects">
 
 <h2>Projects</h2>
 
 <div class="projects">
 
-<div class="card" onclick="openPopup('Line Following Robot','Arduino robot that detects and follows a black line in real time.')">
+<div class="card" onclick="openPopup('Line Following Robot','Arduino robot that follows a black line in real time.')">
 
-<img src="ROBOT.jpg">
+<img src="images/project1.png">
 
 <div class="card-content">
 
@@ -233,11 +258,12 @@ text-align:center;
 <a href="#" class="btn">GitHub</a>
 
 </div>
+
 </div>
 
-<div class="card" onclick="openPopup('QR Code Scanner','Real-time QR detection using Python and OpenCV.')">
+<div class="card" onclick="openPopup('QR Code Scanner','QR detection using Python and OpenCV.')">
 
-<img src="QR Scanner.jpg">
+<img src="images/project2.png">
 
 <div class="card-content">
 
@@ -246,11 +272,12 @@ text-align:center;
 <a href="#" class="btn">GitHub</a>
 
 </div>
+
 </div>
 
-<div class="card" onclick="openPopup('Regression Analysis','Machine learning model predicting customer behavior.')">
+<div class="card" onclick="openPopup('Regression Analysis','Machine learning regression model.')">
 
-<img src="ML.jpg">
+<img src="images/project3.png">
 
 <div class="card-content">
 
@@ -259,11 +286,12 @@ text-align:center;
 <a href="#" class="btn">GitHub</a>
 
 </div>
+
 </div>
 
-<div class="card" onclick="openPopup('OOP Calculator','Python calculator built using object oriented programming.')">
+<div class="card" onclick="openPopup('OOP Calculator','Python calculator using OOP.')">
 
-<img src="Calculator.jpg">
+<img src="images/project4.png">
 
 <div class="card-content">
 
@@ -278,6 +306,8 @@ text-align:center;
 </div>
 
 </section>
+
+<!-- SKILLS -->
 
 <section id="skills">
 
@@ -295,6 +325,8 @@ text-align:center;
 </div>
 
 </section>
+
+<!-- CONTACT -->
 
 <section id="contact">
 
@@ -318,6 +350,8 @@ text-align:center;
 
 </footer>
 
+<!-- POPUP -->
+
 <div class="popup" id="popup">
 
 <div class="popup-content">
@@ -336,22 +370,55 @@ text-align:center;
 
 <script>
 
-function mode(){
-document.body.classList.toggle("dark")
+/* SMOOTH SCROLL */
+
+function scrollToSection(e,id){
+
+e.preventDefault()
+
+document.getElementById(id).scrollIntoView({
+behavior:"smooth"
+})
+
 }
 
+/* DARK MODE */
+
+function mode(){
+
+document.body.classList.toggle("dark")
+
+let btn=document.getElementById("themeBtn")
+
+if(document.body.classList.contains("dark")){
+btn.innerHTML="☀️"
+}
+else{
+btn.innerHTML="🌙"
+}
+
+}
+
+/* POPUP */
+
 function openPopup(t,d){
+
 document.getElementById("popup").style.display="flex"
+
 title.innerText=t
+
 desc.innerText=d
+
 }
 
 function closePopup(){
+
 document.getElementById("popup").style.display="none"
+
 }
 
 </script>
 
 </body>
 </html>
-
+```
