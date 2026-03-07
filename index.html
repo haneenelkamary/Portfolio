@@ -75,6 +75,8 @@ padding-bottom:60px;
 width:170px;
 border-radius:50%;
 animation:float 3s infinite ease-in-out;
+filter: brightness(80%); /* أقل لمعان */
+transition:0.3s;
 }
 
 @keyframes float{
@@ -199,12 +201,25 @@ align-items:center;
 }
 
 .popup-content{
-background:white;
+background:var(--card); /* متوافق مع Dark Mode */
+color:var(--text);
 padding:30px;
 border-radius:20px;
 width:90%;
-max-width:400px;
-text-align:center;
+max-width:700px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+transition:0.3s;
+}
+
+#popupImgContainer{
+flex:1; min-width:200px; max-width:250px; margin:10px;
+}
+
+#popupText{
+flex:1; min-width:200px; margin:10px; color:var(--text);
 }
 </style>
 </head>
@@ -213,7 +228,7 @@ text-align:center;
 
 <!-- NAVBAR -->
 <nav>
-<h3>Haneen</h3>
+<h3>Haneen Elkamary</h3>
 <div>
 <a href="#about" onclick="scrollToSection(event,'about')">About</a>
 <a href="#skills" onclick="scrollToSection(event,'skills')">Skills</a>
@@ -262,19 +277,19 @@ I am an Artificial Intelligence student passionate about robotics, machine learn
 <section id="projects">
 <h2>Projects</h2>
 <div class="projects">
-<div class="card" onclick="openPopup('Line Following Robot','Arduino robot that follows a black line.')">
+<div class="card" onclick="openPopup('Line Following Robot','Arduino robot that follows a black line.','ROBOT.jpg')">
 <img src="ROBOT.jpg">
 <div class="card-content"><h3>Line Following Robot</h3></div>
 </div>
-<div class="card" onclick="openPopup('QR Code Scanner','Real time QR detection using OpenCV.')">
+<div class="card" onclick="openPopup('QR Code Scanner','Real time QR detection using OpenCV.','QR Scanner.jpg')">
 <img src="QR Scanner.jpg">
 <div class="card-content"><h3>QR Scanner</h3></div>
 </div>
-<div class="card" onclick="openPopup('Regression Model','Machine learning regression analysis.')">
+<div class="card" onclick="openPopup('Regression Model','Machine learning regression analysis.','ML.jpg')">
 <img src="ML.jpg">
 <div class="card-content"><h3>ML Project</h3></div>
 </div>
-<div class="card" onclick="openPopup('OOP Calculator','Calculator built using Python OOP.')">
+<div class="card" onclick="openPopup('OOP Calculator','Calculator built using Python OOP.','Calculator.jpg')">
 <img src="Calculator.jpg">
 <div class="card-content"><h3>Calculator</h3></div>
 </div>
@@ -317,12 +332,17 @@ Your message has been sent successfully!
 
 <!-- POPUP -->
 <div class="popup" id="popup">
-<div class="popup-content">
-<h3 id="title"></h3>
-<p id="desc"></p>
-<br>
-<button onclick="closePopup()" class="btn">Close</button>
-</div>
+  <div class="popup-content">
+    <div id="popupImgContainer">
+      <img id="popupImg" src="" style="width:100%; border-radius:15px;">
+    </div>
+    <div id="popupText">
+      <h3 id="title"></h3>
+      <p id="desc"></p>
+      <br>
+      <button onclick="closePopup()" class="btn">Close</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -340,13 +360,14 @@ btn.innerHTML = document.body.classList.contains("dark") ? "☀️" : "🌙"
 }
 
 // Projects Popup
-function openPopup(t,d){
-document.getElementById("popup").style.display="flex"
-title.innerText=t
-desc.innerText=d
+function openPopup(titleText, descText, imgSrc){
+  document.getElementById("popup").style.display = "flex";
+  document.getElementById("title").innerText = titleText;
+  document.getElementById("desc").innerText = descText;
+  document.getElementById("popupImg").src = imgSrc;
 }
 function closePopup(){
-document.getElementById("popup").style.display="none"
+  document.getElementById("popup").style.display = "none";
 }
 
 // Contact Form with success message
