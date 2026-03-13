@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Haneen Elkamary | AI Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -76,12 +78,6 @@ padding-bottom:60px;
 
 .profile{
 width:170px;
-border-radius:50%;
-animation:float 3s infinite ease-in-out;
-}
-
-@keyframes float{
-50%{transform:translateY(-10px);}
 }
 
 .btn{
@@ -164,12 +160,13 @@ background:var(--card);
 border-radius:20px;
 overflow:hidden;
 box-shadow:0 10px 20px rgba(0,0,0,0.1);
-transition:.4s;
+transition:transform .4s, box-shadow .4s;
 cursor:pointer;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 20px 30px rgba(0,0,0,0.2);
 }
 
 .card img{
@@ -239,25 +236,25 @@ align-items:center;
 .popup-content{
 background:var(--card);
 color:var(--text);
-padding:30px;
+padding:35px;
 border-radius:20px;
 width:90%;
-max-width:700px;
+max-width:850px;
 display:flex;
+gap:25px;
+align-items:center;
 flex-wrap:wrap;
 }
 
 #popupImgContainer{
 flex:1;
 min-width:200px;
-max-width:250px;
-margin:10px;
+max-width:300px;
 }
 
 #popupText{
 flex:1;
-min-width:200px;
-margin:10px;
+min-width:250px;
 }
 
 </style>
@@ -265,13 +262,12 @@ margin:10px;
 
 <body>
 
-<!-- NAVBAR -->
-
 <nav>
 
 <h3>Haneen Elkamary</h3>
 
 <div>
+
 <a href="#about">About</a>
 <a href="#usp">USP</a>
 <a href="#skills">Skills</a>
@@ -285,8 +281,6 @@ margin:10px;
 
 </nav>
 
-<!-- HEADER -->
-
 <header>
 
 <img src="profile.jpg" class="profile">
@@ -296,16 +290,13 @@ margin:10px;
 <p>Artificial Intelligence Student | Robotics | Machine Learning | Data Analysis</p>
 
 <a href="https://github.com/haneenelkamary" class="btn">GitHub</a>
-
 <a href="https://linkedin.com" class="btn">LinkedIn</a>
 
 <br><br>
 
-<a href="cv.pdf" download class="btn">⬇ Download My CV</a>
+<a href="cv.pdf" download class="btn">Download CV</a>
 
 </header>
-
-<!-- ABOUT -->
 
 <section id="about">
 
@@ -315,19 +306,13 @@ margin:10px;
 
 <p>
 
-I am an Artificial Intelligence student with a strong passion for technology, robotics, and machine learning.
-
-I enjoy building practical projects that solve real-world problems using Python, C++, and Arduino.
-
-My interests include artificial intelligence, computer vision, and data analysis. I continuously work on improving my technical skills and developing intelligent systems that can be applied to real-life problems.
+I am an Artificial Intelligence student passionate about building real-world technology solutions using programming, robotics, and machine learning. I enjoy developing practical projects that combine software and hardware to solve real problems. My goal is to become an AI engineer capable of designing intelligent systems that can make an impact in different industries.
 
 </p>
 
 </div>
 
 </section>
-
-<!-- USP -->
 
 <section id="usp">
 
@@ -337,15 +322,13 @@ My interests include artificial intelligence, computer vision, and data analysis
 
 <p>
 
-I am an Artificial Intelligence student with strong analytical thinking and a passion for developing intelligent technology solutions. I enjoy learning new tools, building real-world AI applications, and simplifying complex technical ideas through practical projects and clear explanations.
+I combine strong analytical thinking with practical hands-on experience in programming and robotics. I enjoy transforming complex technical ideas into working projects and continuously improving my skills in artificial intelligence, computer vision, and data analysis.
 
 </p>
 
 </div>
 
 </section>
-
-<!-- SKILLS -->
 
 <section id="skills">
 
@@ -383,51 +366,75 @@ I am an Artificial Intelligence student with strong analytical thinking and a pa
 
 </section>
 
-<!-- PROJECTS -->
-
 <section id="projects">
 
 <h2>Projects</h2>
 
 <div class="projects">
 
-<div class="card" onclick="openPopup('Line Following Robot','Autonomous Arduino robot designed to detect and follow a black path using infrared sensors and motor control.','ROBOT.jpg')">
+<div class="card" onclick="openPopup('Line Following Robot','Autonomous Arduino robot that follows a black path using infrared sensors and motor control. The robot reads sensor data and continuously adjusts motor direction to stay on track.','ROBOT.jpg')">
+
 <img src="ROBOT.jpg">
+
 <div class="card-content">
+
 <h3>Line Following Robot</h3>
 <p>Arduino • Sensors • Embedded Programming</p>
-</div>
+
+<a href="#" class="btn">GitHub</a>
+
 </div>
 
-<div class="card" onclick="openPopup('QR Code Scanner','Real-time QR code detection system built using Python and OpenCV.','QR Scanner.jpg')">
+</div>
+
+<div class="card" onclick="openPopup('QR Code Scanner','Real-time QR code detection system built using Python and OpenCV. The program scans camera frames and detects QR codes instantly.','QR Scanner.jpg')">
+
 <img src="QR Scanner.jpg">
+
 <div class="card-content">
+
 <h3>QR Code Scanner</h3>
 <p>Python • OpenCV • Computer Vision</p>
-</div>
+
+<a href="#" class="btn">GitHub</a>
+
 </div>
 
-<div class="card" onclick="openPopup('Machine Learning Regression','Machine learning project that applies regression models to analyze and predict numerical data.','ML.jpg')">
+</div>
+
+<div class="card" onclick="openPopup('Machine Learning Regression','Machine learning project focused on regression models to analyze relationships between variables and predict numerical values using Python libraries.','ML.jpg')">
+
 <img src="ML.jpg">
+
 <div class="card-content">
+
 <h3>ML Regression Project</h3>
 <p>Python • Machine Learning • Data Analysis</p>
-</div>
+
+<a href="#" class="btn">GitHub</a>
+
 </div>
 
-<div class="card" onclick="openPopup('OOP Calculator','Calculator application built using Python with object-oriented programming concepts.','Calculator.jpg')">
-<img src="Calculator.jpg">
-<div class="card-content">
-<h3>Python OOP Calculator</h3>
-<p>Python • OOP • Programming Logic</p>
 </div>
+
+<div class="card" onclick="openPopup('OOP Calculator','Calculator built in Python using object-oriented programming concepts such as classes, methods, and modular code structure.','Calculator.jpg')">
+
+<img src="Calculator.jpg">
+
+<div class="card-content">
+
+<h3>Python OOP Calculator</h3>
+<p>Python • OOP • Programming</p>
+
+<a href="#" class="btn">GitHub</a>
+
+</div>
+
 </div>
 
 </div>
 
 </section>
-
-<!-- EXPERIENCE -->
 
 <section id="experience">
 
@@ -444,35 +451,26 @@ I am an Artificial Intelligence student with strong analytical thinking and a pa
 
 </section>
 
-<!-- CONTACT -->
-
 <section id="contact">
 
 <h2>Contact Me</h2>
 
 <div class="contact">
 
-<form id="contactForm" action="https://formspree.io/f/xlgpeyvk" method="POST">
+<form action="https://formspree.io/f/xlgpeyvk" method="POST">
 
 <input type="text" name="name" placeholder="Your Name" required>
-
 <br>
 
 <input type="email" name="email" placeholder="Your Email" required>
-
 <br>
 
 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-
 <br>
 
 <button type="submit" class="btn">Send Message</button>
 
 </form>
-
-<p id="successMsg" style="color:green; display:none; margin-top:10px;">
-Message sent successfully!
-</p>
 
 </div>
 
@@ -483,8 +481,6 @@ Message sent successfully!
 <p>© 2026 Haneen Elkamary</p>
 
 </footer>
-
-<!-- POPUP -->
 
 <div class="popup" id="popup">
 
@@ -497,7 +493,6 @@ Message sent successfully!
 <div id="popupText">
 
 <h3 id="title"></h3>
-
 <p id="desc"></p>
 
 <br>
@@ -522,7 +517,7 @@ btn.innerHTML=document.body.classList.contains("dark")?"☀️":"🌙"
 
 }
 
-/* Scroll animation */
+/* scroll animation */
 
 const sections=document.querySelectorAll("section")
 
@@ -531,9 +526,7 @@ window.addEventListener("scroll",()=>{
 sections.forEach(sec=>{
 
 const top=window.scrollY
-
 const offset=sec.offsetTop-400
-
 const height=sec.offsetHeight
 
 if(top>=offset && top<offset+height){
@@ -546,16 +539,35 @@ sec.classList.add("show")
 
 })
 
-/* Popup */
+/* smooth navbar scroll */
+
+document.querySelectorAll("nav a").forEach(link=>{
+
+link.addEventListener("click",function(e){
+
+e.preventDefault()
+
+const target=document.querySelector(this.getAttribute("href"))
+
+window.scrollTo({
+
+top:target.offsetTop-70,
+behavior:"smooth"
+
+})
+
+})
+
+})
+
+/* popup */
 
 function openPopup(titleText,descText,imgSrc){
 
 document.getElementById("popup").style.display="flex"
 
 document.getElementById("title").innerText=titleText
-
 document.getElementById("desc").innerText=descText
-
 document.getElementById("popupImg").src=imgSrc
 
 }
