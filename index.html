@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
 --bg:#f4f6ff;
 --text:#222;
@@ -36,6 +37,7 @@ scroll-behavior:smooth;
 }
 
 /* NAVBAR */
+
 nav{
 position:fixed;
 top:0;
@@ -65,6 +67,7 @@ border-radius:15px;
 }
 
 /* HEADER */
+
 header{
 text-align:center;
 padding-top:120px;
@@ -75,7 +78,6 @@ padding-bottom:60px;
 width:170px;
 border-radius:50%;
 animation:float 3s infinite ease-in-out;
-transition:0.3s;
 }
 
 @keyframes float{
@@ -94,8 +96,17 @@ font-size:14px;
 }
 
 /* SECTIONS */
+
 section{
 padding:80px 10%;
+opacity:0;
+transform:translateY(40px);
+transition:.6s;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
 }
 
 h2{
@@ -104,14 +115,44 @@ margin-bottom:30px;
 }
 
 /* ABOUT */
+
 .about{
-max-width:700px;
+max-width:750px;
 margin:auto;
 text-align:center;
 line-height:1.7;
 }
 
+/* SKILLS */
+
+.skill{
+max-width:500px;
+margin:15px auto;
+text-align:left;
+}
+
+.bar{
+width:100%;
+height:10px;
+background:#ddd;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress{
+height:100%;
+background:var(--accent);
+}
+
+.python{width:90%;}
+.cpp{width:75%;}
+.arduino{width:80%;}
+.ml{width:70%;}
+.data{width:75%;}
+.cv{width:65%;}
+
 /* PROJECTS */
+
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -141,20 +182,13 @@ object-fit:cover;
 padding:20px;
 }
 
-/* SKILLS */
-.skills{
-text-align:center;
-}
-
-.skills span{
-display:inline-block;
-margin:10px;
-padding:10px 16px;
-background:#ffc6e6;
-border-radius:20px;
+.card-content p{
+font-size:14px;
+opacity:.8;
 }
 
 /* EXPERIENCE */
+
 .experience{
 max-width:600px;
 margin:auto;
@@ -165,6 +199,7 @@ margin:10px 0;
 }
 
 /* CONTACT */
+
 .contact{
 text-align:center;
 }
@@ -180,6 +215,7 @@ border:1px solid #ccc;
 }
 
 /* FOOTER */
+
 footer{
 text-align:center;
 padding:25px;
@@ -187,6 +223,7 @@ background:var(--card);
 }
 
 /* POPUP */
+
 .popup{
 position:fixed;
 top:0;
@@ -200,7 +237,7 @@ align-items:center;
 }
 
 .popup-content{
-background:var(--card); /* متوافق مع Dark Mode */
+background:var(--card);
 color:var(--text);
 padding:30px;
 border-radius:20px;
@@ -208,196 +245,328 @@ width:90%;
 max-width:700px;
 display:flex;
 flex-wrap:wrap;
-justify-content:center;
-align-items:center;
-transition:0.3s;
 }
 
 #popupImgContainer{
-flex:1; min-width:200px; max-width:250px; margin:10px;
+flex:1;
+min-width:200px;
+max-width:250px;
+margin:10px;
 }
 
 #popupText{
-flex:1; min-width:200px; margin:10px; color:var(--text);
+flex:1;
+min-width:200px;
+margin:10px;
 }
+
 </style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
+
 <nav>
+
 <h3>Haneen Elkamary</h3>
+
 <div>
-<a href="#about" onclick="scrollToSection(event,'about')">About</a>
-<a href="#skills" onclick="scrollToSection(event,'skills')">Skills</a>
-<a href="#projects" onclick="scrollToSection(event,'projects')">Projects</a>
-<a href="#experience" onclick="scrollToSection(event,'experience')">Experience</a>
-<a href="#contact" onclick="scrollToSection(event,'contact')">Contact</a>
+<a href="#about">About</a>
+<a href="#usp">USP</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+
 <span class="toggle" onclick="mode()" id="themeBtn">🌙</span>
+
 </div>
+
 </nav>
 
 <!-- HEADER -->
+
 <header>
+
 <img src="profile.jpg" class="profile">
+
 <h1>Haneen Elkamary</h1>
-<p>Artificial Intelligence Student | Robotics | Machine Learning</p>
+
+<p>Artificial Intelligence Student | Robotics | Machine Learning | Data Analysis</p>
+
 <a href="https://github.com/haneenelkamary" class="btn">GitHub</a>
+
 <a href="https://linkedin.com" class="btn">LinkedIn</a>
+
 <br><br>
-<a href="cv.pdf" class="btn">Download CV</a>
+
+<a href="cv.pdf" download class="btn">⬇ Download My CV</a>
+
 </header>
 
 <!-- ABOUT -->
+
 <section id="about">
+
 <h2>About Me</h2>
+
 <div class="about">
+
 <p>
-I am an Artificial Intelligence student passionate about robotics, machine learning, and data analysis. I enjoy building real-world projects using Python, C++, and Arduino.
+
+I am an Artificial Intelligence student with a strong passion for technology, robotics, and machine learning.
+
+I enjoy building practical projects that solve real-world problems using Python, C++, and Arduino.
+
+My interests include artificial intelligence, computer vision, and data analysis. I continuously work on improving my technical skills and developing intelligent systems that can be applied to real-life problems.
+
 </p>
+
 </div>
+
+</section>
+
+<!-- USP -->
+
+<section id="usp">
+
+<h2>Unique Selling Proposition</h2>
+
+<div class="about">
+
+<p>
+
+I am an Artificial Intelligence student with strong analytical thinking and a passion for developing intelligent technology solutions. I enjoy learning new tools, building real-world AI applications, and simplifying complex technical ideas through practical projects and clear explanations.
+
+</p>
+
+</div>
+
 </section>
 
 <!-- SKILLS -->
+
 <section id="skills">
+
 <h2>Skills</h2>
-<div class="skills">
-<span>Python</span>
-<span>C++</span>
-<span>Arduino</span>
-<span>Machine Learning</span>
-<span>Data Analysis</span>
-<span>OpenCV</span>
+
+<div class="skill">
+<p>Python</p>
+<div class="bar"><div class="progress python"></div></div>
 </div>
+
+<div class="skill">
+<p>C++</p>
+<div class="bar"><div class="progress cpp"></div></div>
+</div>
+
+<div class="skill">
+<p>Arduino</p>
+<div class="bar"><div class="progress arduino"></div></div>
+</div>
+
+<div class="skill">
+<p>Machine Learning</p>
+<div class="bar"><div class="progress ml"></div></div>
+</div>
+
+<div class="skill">
+<p>Data Analysis</p>
+<div class="bar"><div class="progress data"></div></div>
+</div>
+
+<div class="skill">
+<p>OpenCV</p>
+<div class="bar"><div class="progress cv"></div></div>
+</div>
+
 </section>
 
 <!-- PROJECTS -->
+
 <section id="projects">
+
 <h2>Projects</h2>
+
 <div class="projects">
-<div class="card" onclick="openPopup('Line Following Robot','Arduino robot that follows a black line.','ROBOT.jpg')">
+
+<div class="card" onclick="openPopup('Line Following Robot','Autonomous Arduino robot designed to detect and follow a black path using infrared sensors and motor control.','ROBOT.jpg')">
 <img src="ROBOT.jpg">
-<div class="card-content"><h3>Line Following Robot</h3></div>
+<div class="card-content">
+<h3>Line Following Robot</h3>
+<p>Arduino • Sensors • Embedded Programming</p>
 </div>
-<div class="card" onclick="openPopup('QR Code Scanner','Real time QR detection using OpenCV.','QR Scanner.jpg')">
+</div>
+
+<div class="card" onclick="openPopup('QR Code Scanner','Real-time QR code detection system built using Python and OpenCV.','QR Scanner.jpg')">
 <img src="QR Scanner.jpg">
-<div class="card-content"><h3>QR Scanner</h3></div>
+<div class="card-content">
+<h3>QR Code Scanner</h3>
+<p>Python • OpenCV • Computer Vision</p>
 </div>
-<div class="card" onclick="openPopup('Regression Model','Machine learning regression analysis.','ML.jpg')">
+</div>
+
+<div class="card" onclick="openPopup('Machine Learning Regression','Machine learning project that applies regression models to analyze and predict numerical data.','ML.jpg')">
 <img src="ML.jpg">
-<div class="card-content"><h3>ML Project</h3></div>
+<div class="card-content">
+<h3>ML Regression Project</h3>
+<p>Python • Machine Learning • Data Analysis</p>
 </div>
-<div class="card" onclick="openPopup('OOP Calculator','Calculator built using Python OOP.','Calculator.jpg')">
+</div>
+
+<div class="card" onclick="openPopup('OOP Calculator','Calculator application built using Python with object-oriented programming concepts.','Calculator.jpg')">
 <img src="Calculator.jpg">
-<div class="card-content"><h3>Calculator</h3></div>
+<div class="card-content">
+<h3>Python OOP Calculator</h3>
+<p>Python • OOP • Programming Logic</p>
 </div>
 </div>
+
+</div>
+
 </section>
 
 <!-- EXPERIENCE -->
+
 <section id="experience">
+
 <h2>Experience</h2>
+
 <ul class="experience">
-<li>AI Student – Faculty of Artificial Intelligence</li>
+
+<li>Artificial Intelligence Student – Faculty of Artificial Intelligence</li>
 <li>Arduino Robotics Projects</li>
-<li>Cyber Security Training (NTI)</li>
-<li>Python Projects & Data Analysis</li>
+<li>Python Programming Projects</li>
+<li>Machine Learning and Data Analysis Practice</li>
+
 </ul>
+
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact">
+
 <h2>Contact Me</h2>
+
 <div class="contact">
+
 <form id="contactForm" action="https://formspree.io/f/xlgpeyvk" method="POST">
+
 <input type="text" name="name" placeholder="Your Name" required>
+
 <br>
+
 <input type="email" name="email" placeholder="Your Email" required>
+
 <br>
+
 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
 <br>
+
 <button type="submit" class="btn">Send Message</button>
+
 </form>
+
 <p id="successMsg" style="color:green; display:none; margin-top:10px;">
-Your message has been sent successfully!
+Message sent successfully!
 </p>
+
 </div>
+
 </section>
 
 <footer>
+
 <p>© 2026 Haneen Elkamary</p>
+
 </footer>
 
 <!-- POPUP -->
+
 <div class="popup" id="popup">
-  <div class="popup-content">
-    <div id="popupImgContainer">
-      <img id="popupImg" src="" style="width:100%; border-radius:15px;">
-    </div>
-    <div id="popupText">
-      <h3 id="title"></h3>
-      <p id="desc"></p>
-      <br>
-      <button onclick="closePopup()" class="btn">Close</button>
-    </div>
-  </div>
+
+<div class="popup-content">
+
+<div id="popupImgContainer">
+<img id="popupImg" src="" style="width:100%; border-radius:15px;">
+</div>
+
+<div id="popupText">
+
+<h3 id="title"></h3>
+
+<p id="desc"></p>
+
+<br>
+
+<button onclick="closePopup()" class="btn">Close</button>
+
+</div>
+
+</div>
+
 </div>
 
 <script>
-// Smooth Scroll
-function scrollToSection(e,id){
-e.preventDefault()
-document.getElementById(id).scrollIntoView({behavior:"smooth"})
-}
 
-// Dark/Light Mode
 function mode(){
+
 document.body.classList.toggle("dark")
+
 let btn=document.getElementById("themeBtn")
-btn.innerHTML = document.body.classList.contains("dark") ? "☀️" : "🌙"
+
+btn.innerHTML=document.body.classList.contains("dark")?"☀️":"🌙"
+
 }
 
-// Projects Popup
-function openPopup(titleText, descText, imgSrc){
-  document.getElementById("popup").style.display = "flex";
-  document.getElementById("title").innerText = titleText;
-  document.getElementById("desc").innerText = descText;
-  document.getElementById("popupImg").src = imgSrc;
+/* Scroll animation */
+
+const sections=document.querySelectorAll("section")
+
+window.addEventListener("scroll",()=>{
+
+sections.forEach(sec=>{
+
+const top=window.scrollY
+
+const offset=sec.offsetTop-400
+
+const height=sec.offsetHeight
+
+if(top>=offset && top<offset+height){
+
+sec.classList.add("show")
+
 }
+
+})
+
+})
+
+/* Popup */
+
+function openPopup(titleText,descText,imgSrc){
+
+document.getElementById("popup").style.display="flex"
+
+document.getElementById("title").innerText=titleText
+
+document.getElementById("desc").innerText=descText
+
+document.getElementById("popupImg").src=imgSrc
+
+}
+
 function closePopup(){
-  document.getElementById("popup").style.display = "none";
+
+document.getElementById("popup").style.display="none"
+
 }
 
-// Contact Form with success message
-const form = document.getElementById("contactForm");
-const successMsg = document.getElementById("successMsg");
-
-form.addEventListener("submit", function(e) {
-    e.preventDefault(); // منع إعادة تحميل الصفحة
-    const formData = new FormData(form);
-    fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-        if(response.ok){
-            successMsg.style.display = "block";
-            form.reset();
-            setTimeout(()=>{successMsg.style.display="none"},3000);
-        } else {
-            response.json().then(data=>{
-                alert("Error: " + (data.error || "Something went wrong"));
-            });
-        }
-    })
-    .catch(error=>{
-        alert("Error: " + error);
-    });
-});
 </script>
 
 </body>
 </html>
-
