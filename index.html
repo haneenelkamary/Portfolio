@@ -24,10 +24,6 @@
 
 *{ box-sizing:border-box; }
 
-html {
-  scroll-behavior: smooth; /* الحركة السلسة */
-}
-
 body{
 margin:0;
 font-family:Poppins;
@@ -322,6 +318,40 @@ if(top>=offset && top<offset+height){ sec.classList.add("show"); }
 });
 });
 
+// Fast smooth scroll for Navbar links
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        const targetID = this.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetID);
+        const targetPosition = targetSection.offsetTop;
+        smoothScrollTo(targetPosition, 600); // 600ms = سريع وسلس
+    });
+});
+
+function smoothScrollTo(target, duration) {
+    const start = window.scrollY;
+    const distance = target - start;
+    let startTime = null;
+
+    function animation(currentTime){
+        if(!startTime) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutQuad(timeElapsed, start, distance, duration);
+        window.scrollTo(0, run);
+        if(timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function easeInOutQuad(t, b, c, d){
+        t /= d/2;
+        if(t < 1) return c/2*t*t + b;
+        t--;
+        return -c/2 * (t*(t-2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
 // Popup with long project descriptions & GitHub link
 function openPopup(title, imgSrc, githubLink){
 document.getElementById("popup").style.display="flex";
@@ -359,6 +389,7 @@ document.getElementById("desc").innerText = desc;
 }
 
 function closePopup(){ document.getElementById("popup").style.display="none"; }
+
 </script>
 
 </body>
