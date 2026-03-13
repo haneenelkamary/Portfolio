@@ -22,9 +22,7 @@
 --card:#1e293b;
 }
 
-*{
-box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 body{
 margin:0;
@@ -49,12 +47,7 @@ box-shadow:0 2px 10px rgba(0,0,0,0.1);
 z-index:100;
 }
 
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:var(--text);
-font-weight:500;
-}
+nav a{ margin-left:20px; text-decoration:none; color:var(--text); font-weight:500; }
 
 .toggle{
 cursor:pointer;
@@ -108,52 +101,22 @@ opacity:1;
 transform:translateY(0);
 }
 
-h2{
-text-align:center;
-margin-bottom:30px;
-}
+h2{ text-align:center; margin-bottom:30px; }
 
 /* ABOUT */
-.about{
-max-width:750px;
-margin:auto;
-text-align:center;
-line-height:1.7;
-}
+.about{ max-width:750px; margin:auto; text-align:center; line-height:1.7; }
 
 /* SKILLS */
-.skill{
-max-width:500px;
-margin:15px auto;
-text-align:left;
-}
+.skill{ max-width:500px; margin:15px auto; text-align:left; }
 
-.bar{
-width:100%;
-height:10px;
-background:#ddd;
-border-radius:20px;
-overflow:hidden;
-}
+.bar{ width:100%; height:10px; background:#ddd; border-radius:20px; overflow:hidden; }
 
-.progress{
-height:100%;
-background:var(--accent);
-}
+.progress{ height:100%; background:var(--accent); }
 
-.python{width:90%;}
-.cpp{width:75%;}
-.arduino{width:80%;}
-.ml{width:70%;}
-.data{width:75%;}
-.cv{width:65%;}
+.python{width:90%;} .cpp{width:75%;} .arduino{width:80%;} .ml{width:70%;} .data{width:75%;} .cv{width:65%;}
 
 /* PROJECTS */
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
+.projects{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px; }
 
 .card{
 background:var(--card);
@@ -169,38 +132,21 @@ transform:translateY(-10px) scale(1.03);
 box-shadow:0 20px 30px rgba(0,0,0,0.2);
 }
 
-.card img{
-width:100%;
-height:170px;
-object-fit:cover;
-}
+.card img{ width:100%; height:170px; object-fit:cover; }
 
-.card-content{
-padding:20px;
-}
+.card-content{ padding:20px; }
 
-.card-content p{
-font-size:14px;
-opacity:.8;
-}
+.card-content p{ font-size:14px; opacity:.8; }
 
 /* EXPERIENCE */
-.experience{
-max-width:600px;
-margin:auto;
-}
+.experience{ max-width:600px; margin:auto; }
 
-.experience li{
-margin:10px 0;
-}
+.experience li{ margin:10px 0; }
 
 /* CONTACT */
-.contact{
-text-align:center;
-}
+.contact{ text-align:center; }
 
-.contact input,
-.contact textarea{
+.contact input, .contact textarea{
 width:80%;
 max-width:400px;
 padding:10px;
@@ -210,19 +156,13 @@ border:1px solid #ccc;
 }
 
 /* FOOTER */
-footer{
-text-align:center;
-padding:25px;
-background:var(--card);
-}
+footer{ text-align:center; padding:25px; background:var(--card); }
 
 /* POPUP */
 .popup{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+top:0; left:0;
+width:100%; height:100%;
 background:rgba(0,0,0,0.7);
 display:none;
 justify-content:center;
@@ -235,23 +175,21 @@ color:var(--text);
 padding:35px;
 border-radius:20px;
 width:90%;
-max-width:850px;
+max-width:900px;
 display:flex;
 gap:25px;
-align-items:center;
+align-items:flex-start;
 flex-wrap:wrap;
 }
 
-#popupImgContainer{
-flex:1;
-min-width:200px;
-max-width:300px;
-}
+#popupImgContainer{ flex:1; min-width:250px; max-width:350px; }
+#popupImg{ width:100%; border-radius:15px; }
 
-#popupText{
-flex:1;
-min-width:250px;
-}
+#popupText{ flex:1; min-width:300px; }
+#popupText h3{ margin-top:0; }
+#popupText p{ line-height:1.6; }
+
+#popupText a.btn{ margin-top:15px; display:inline-block; }
 </style>
 </head>
 
@@ -283,106 +221,56 @@ min-width:250px;
 <section id="about">
 <h2>About Me</h2>
 <div class="about">
-<p>
-I am an Artificial Intelligence student passionate about building real-world technology solutions using programming, robotics, and machine learning. 
-I enjoy developing practical projects that combine software and hardware to solve real problems. 
-I continuously learn new tools and frameworks to improve my technical skills. 
-My goal is to create intelligent systems that can be applied in everyday life. 
-I am motivated by problem-solving and innovation in AI and robotics.
-</p>
+<p>I am an AI student passionate about building real-world solutions. I enjoy combining software and hardware for robotics projects. I continuously learn new tools to improve my technical skills. My goal is to create intelligent systems for everyday applications. I am motivated by innovation and problem-solving in AI and robotics.</p>
 </div>
 </section>
 
 <section id="usp">
 <h2>Unique Selling Proposition</h2>
 <div class="about">
-<p>
-I combine analytical thinking with hands-on project experience in programming and robotics. 
-I enjoy turning complex technical ideas into working solutions. 
-I am quick to adapt to new technologies and frameworks. 
-I focus on building practical projects that demonstrate my skills. 
-My aim is to deliver clear, functional, and intelligent technology solutions.
-</p>
+<p>I combine analytical thinking with hands-on experience. I quickly adapt to new frameworks. I focus on practical projects that demonstrate my skills. I turn complex ideas into working solutions. My aim is to deliver functional and intelligent technology solutions.</p>
 </div>
 </section>
 
 <section id="skills">
 <h2>Skills</h2>
-
-<div class="skill">
-<p>Python</p>
-<div class="bar"><div class="progress python"></div></div>
-</div>
-
-<div class="skill">
-<p>C++</p>
-<div class="bar"><div class="progress cpp"></div></div>
-</div>
-
-<div class="skill">
-<p>Arduino</p>
-<div class="bar"><div class="progress arduino"></div></div>
-</div>
-
-<div class="skill">
-<p>Machine Learning</p>
-<div class="bar"><div class="progress ml"></div></div>
-</div>
-
-<div class="skill">
-<p>Data Analysis</p>
-<div class="bar"><div class="progress data"></div></div>
-</div>
-
-<div class="skill">
-<p>OpenCV</p>
-<div class="bar"><div class="progress cv"></div></div>
-</div>
+<div class="skill"><p>Python</p><div class="bar"><div class="progress python"></div></div></div>
+<div class="skill"><p>C++</p><div class="bar"><div class="progress cpp"></div></div></div>
+<div class="skill"><p>Arduino</p><div class="bar"><div class="progress arduino"></div></div></div>
+<div class="skill"><p>Machine Learning</p><div class="bar"><div class="progress ml"></div></div></div>
+<div class="skill"><p>Data Analysis</p><div class="bar"><div class="progress data"></div></div></div>
+<div class="skill"><p>OpenCV</p><div class="bar"><div class="progress cv"></div></div></div>
 </section>
 
 <section id="projects">
 <h2>Projects</h2>
 <div class="projects">
-
-<div class="card" onclick="openPopup('Line Following Robot','ROBOT.jpg')">
+<div class="card" onclick="openPopup('Line Following Robot','ROBOT.jpg','https://github.com/haneenelkamary/Line-Following-Robot')">
 <img src="ROBOT.jpg">
-<div class="card-content">
-<h3>Line Following Robot</h3>
-<p>Arduino • Sensors • Embedded Programming</p>
-</div>
+<div class="card-content"><h3>Line Following Robot</h3><p>Arduino • Sensors • Embedded Programming</p></div>
 </div>
 
-<div class="card" onclick="openPopup('QR Code Scanner','QR Scanner.jpg')">
+<div class="card" onclick="openPopup('QR Code Scanner','QR Scanner.jpg','https://github.com/haneenelkamary/QR-Code-Scanner')">
 <img src="QR Scanner.jpg">
-<div class="card-content">
-<h3>QR Code Scanner</h3>
-<p>Python • OpenCV • Computer Vision</p>
-</div>
+<div class="card-content"><h3>QR Code Scanner</h3><p>Python • OpenCV • Computer Vision</p></div>
 </div>
 
-<div class="card" onclick="openPopup('Machine Learning Regression','ML.jpg')">
+<div class="card" onclick="openPopup('Machine Learning Regression','ML.jpg','https://github.com/haneenelkamary/ML-Regression')">
 <img src="ML.jpg">
-<div class="card-content">
-<h3>ML Regression Project</h3>
-<p>Python • Machine Learning • Data Analysis</p>
-</div>
+<div class="card-content"><h3>ML Regression Project</h3><p>Python • Machine Learning • Data Analysis</p></div>
 </div>
 
-<div class="card" onclick="openPopup('Python OOP Calculator','Calculator.jpg')">
+<div class="card" onclick="openPopup('Python OOP Calculator','Calculator.jpg','https://github.com/haneenelkamary/Python-OOP-Calculator')">
 <img src="Calculator.jpg">
-<div class="card-content">
-<h3>Python OOP Calculator</h3>
-<p>Python • OOP • Programming</p>
+<div class="card-content"><h3>Python OOP Calculator</h3><p>Python • OOP • Programming</p></div>
 </div>
-</div>
-
 </div>
 </section>
 
 <section id="experience">
 <h2>Experience</h2>
 <ul class="experience">
-<li>Artificial Intelligence Student – Faculty of Artificial Intelligence</li>
+<li>Artificial Intelligence Student – Faculty of AI</li>
 <li>Arduino Robotics Projects</li>
 <li>Python Programming Projects</li>
 <li>Machine Learning Practice</li>
@@ -401,19 +289,16 @@ My aim is to deliver clear, functional, and intelligent technology solutions.
 </div>
 </section>
 
-<footer>
-<p>© 2026 Haneen Elkamary</p>
-</footer>
+<footer><p>© 2026 Haneen Elkamary</p></footer>
 
 <div class="popup" id="popup">
 <div class="popup-content">
-<div id="popupImgContainer">
-<img id="popupImg" src="" style="width:100%; border-radius:15px;">
-</div>
+<div id="popupImgContainer"><img id="popupImg" src=""></div>
 <div id="popupText">
 <h3 id="title"></h3>
 <p id="desc"></p>
-<br>
+<a id="projectLink" href="#" target="_blank" class="btn">View on GitHub</a>
+<br><br>
 <button onclick="closePopup()" class="btn">Close</button>
 </div>
 </div>
@@ -421,11 +306,7 @@ My aim is to deliver clear, functional, and intelligent technology solutions.
 
 <script>
 // Dark mode toggle
-function mode(){
-document.body.classList.toggle("dark");
-let btn=document.getElementById("themeBtn");
-btn.innerHTML=document.body.classList.contains("dark")?"☀️":"🌙";
-}
+function mode(){document.body.classList.toggle("dark");let btn=document.getElementById("themeBtn");btn.innerHTML=document.body.classList.contains("dark")?"☀️":"🌙";}
 
 // Scroll animation
 const sections=document.querySelectorAll("section");
@@ -434,63 +315,68 @@ sections.forEach(sec=>{
 const top=window.scrollY;
 const offset=sec.offsetTop-400;
 const height=sec.offsetHeight;
-if(top>=offset && top<offset+height){
-sec.classList.add("show");
-}
+if(top>=offset && top<offset+height){ sec.classList.add("show"); }
 });
 });
 
-// Smooth scroll for navbar links
-document.querySelectorAll("nav a").forEach(link=>{
-link.addEventListener("click", function(e){
-e.preventDefault();
-const target=document.querySelector(this.getAttribute("href"));
-window.scrollTo({
-top: target.offsetTop - 70,
-behavior: "smooth"
-});
-});
+// Smooth scroll أبطأ عند الضغط على Navbar
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", function(e){
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    const targetPosition = target.offsetTop - 70;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 1500;
+    let start = null;
+    function step(timestamp){
+      if(!start) start = timestamp;
+      const progress = timestamp - start;
+      const percent = Math.min(progress / duration, 1);
+      window.scrollTo(0, startPosition + distance * percent);
+      if(progress < duration){ window.requestAnimationFrame(step); }
+    }
+    window.requestAnimationFrame(step);
+  });
 });
 
-// Popup with long project descriptions
-function openPopup(title, imgSrc){
+// Popup with long project descriptions & GitHub link
+function openPopup(title, imgSrc, githubLink){
 document.getElementById("popup").style.display="flex";
 document.getElementById("popupImg").src=imgSrc;
-document.getElementById("title").innerText=title;
+document.getElementById("title").innerText = title;
+document.getElementById("projectLink").href = githubLink;
 
 let desc = "";
 if(title === "Line Following Robot"){
-desc = "This project is an autonomous robot built using Arduino. "
-+ "It uses infrared sensors to detect a black line on the floor and follow it automatically. "
-+ "The sensor data is processed in real-time to control the motors and adjust the robot's direction. "
-+ "It demonstrates embedded systems programming, sensor integration, and basic robotics control. "
-+ "A practical example of combining hardware and software to solve navigation challenges.";
+desc = "This project is an autonomous Arduino robot. "
++ "It uses infrared sensors to detect and follow a black line on the floor. "
++ "The sensor data controls the motors in real-time to adjust direction. "
++ "It demonstrates embedded systems programming, sensor integration, and robotics control. "
++ "An excellent hands-on example of combining hardware and software to solve navigation challenges.";
 } else if(title === "QR Code Scanner"){
-desc = "A computer vision project developed using Python and OpenCV. "
-+ "Captures real-time video from a webcam and detects QR codes in each frame. "
-+ "Once detected, it decodes the information and displays it instantly. "
-+ "Demonstrates image processing, real-time computer vision, and data extraction techniques. "
+desc = "A computer vision project using Python and OpenCV. "
++ "Captures real-time video and detects QR codes in each frame. "
++ "Once detected, it decodes the information instantly. "
++ "Demonstrates image processing, real-time CV, and data extraction techniques. "
 + "Useful for scanning tickets, URLs, or product information efficiently.";
 } else if(title === "Machine Learning Regression"){
-desc = "This project applies machine learning regression algorithms to predict numerical values. "
-+ "Involves collecting and preprocessing datasets to ensure accurate predictions. "
-+ "Various regression models are tested and their performances evaluated using metrics like RMSE and R². "
+desc = "Applies regression algorithms to predict numerical values. "
++ "Involves preprocessing datasets to ensure accuracy. "
++ "Various models are tested and evaluated using metrics like RMSE and R². "
 + "Demonstrates statistical analysis, feature selection, and model optimization. "
 + "A comprehensive example of predictive analytics in real-world scenarios.";
 } else if(title === "Python OOP Calculator"){
-desc = "A calculator application developed using Python and object-oriented programming. "
-+ "Uses classes and methods to organize mathematical operations cleanly and efficiently. "
-+ "Handles basic arithmetic as well as advanced functions in a modular way. "
-+ "Demonstrates OOP concepts like encapsulation and abstraction. "
-+ "An excellent example of designing scalable and maintainable Python applications.";
+desc = "A calculator developed using Python OOP concepts. "
++ "Uses classes and methods to organize operations cleanly. "
++ "Handles arithmetic and advanced functions modularly. "
++ "Demonstrates encapsulation and abstraction principles. "
++ "An example of designing scalable and maintainable Python applications.";
 }
-
 document.getElementById("desc").innerText = desc;
 }
 
-function closePopup(){
-document.getElementById("popup").style.display="none";
-}
+function closePopup(){ document.getElementById("popup").style.display="none"; }
 </script>
 
 </body>
