@@ -174,21 +174,37 @@ color:var(--text);
 padding:35px;
 border-radius:20px;
 width:90%;
-max-width:900px;
+max-width:1000px;
 display:flex;
 gap:25px;
 align-items:flex-start;
 flex-wrap:wrap;
+overflow-y:auto;
+max-height:90vh;
 }
 
-#popupImgContainer{ flex:1; min-width:250px; max-width:350px; }
-#popupImg{ width:100%; border-radius:15px; }
+#popupImgContainer{
+flex:1 1 300px;
+min-width:250px;
+max-width:400px;
+}
 
-#popupText{ flex:1; min-width:300px; }
+#popupImg{ width:100%; border-radius:50%; } /* الصورة دائرية */
+
+#popupText{
+flex:2 1 400px;
+min-width:300px;
+overflow-y:auto;
+}
+
 #popupText h3{ margin-top:0; }
-#popupText p{ line-height:1.6; }
+#popupText p{ line-height:1.6; max-height:75vh; }
 
-#popupText a.btn{ margin-top:15px; display:inline-block; }
+/* Responsive */
+@media(max-width:768px){
+  .popup-content{ flex-direction:column; align-items:center; }
+  #popupImgContainer, #popupText{ flex:unset; width:100%; max-width:none; }
+}
 </style>
 </head>
 
@@ -325,7 +341,7 @@ document.querySelectorAll('nav a').forEach(link => {
         const targetID = this.getAttribute('href').slice(1);
         const targetSection = document.getElementById(targetID);
         const targetPosition = targetSection.offsetTop;
-        smoothScrollTo(targetPosition, 600); // 600ms = سريع وسلس
+        smoothScrollTo(targetPosition, 600);
     });
 });
 
