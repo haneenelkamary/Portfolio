@@ -78,6 +78,15 @@ padding-bottom:60px;
 
 .profile{
 width:170px;
+border-radius:50%;
+animation:float 3s infinite ease-in-out;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
 }
 
 .btn{
@@ -306,7 +315,7 @@ min-width:250px;
 
 <p>
 
-I am an Artificial Intelligence student passionate about building real-world technology solutions using programming, robotics, and machine learning. I enjoy developing practical projects that combine software and hardware to solve real problems. My goal is to become an AI engineer capable of designing intelligent systems that can make an impact in different industries.
+I am an Artificial Intelligence student passionate about building real-world technology solutions using programming, robotics, and machine learning. I enjoy developing practical projects that combine software and hardware to solve real problems.
 
 </p>
 
@@ -322,7 +331,7 @@ I am an Artificial Intelligence student passionate about building real-world tec
 
 <p>
 
-I combine strong analytical thinking with practical hands-on experience in programming and robotics. I enjoy transforming complex technical ideas into working projects and continuously improving my skills in artificial intelligence, computer vision, and data analysis.
+I combine analytical thinking with hands-on project experience in programming and robotics. I enjoy turning complex technical ideas into working solutions.
 
 </p>
 
@@ -372,7 +381,7 @@ I combine strong analytical thinking with practical hands-on experience in progr
 
 <div class="projects">
 
-<div class="card" onclick="openPopup('Line Following Robot','Autonomous Arduino robot that follows a black path using infrared sensors and motor control. The robot reads sensor data and continuously adjusts motor direction to stay on track.','ROBOT.jpg')">
+<div class="card" onclick="openPopup('Line Following Robot','Autonomous Arduino robot that follows a black line using infrared sensors and motor control.','ROBOT.jpg')">
 
 <img src="ROBOT.jpg">
 
@@ -381,13 +390,11 @@ I combine strong analytical thinking with practical hands-on experience in progr
 <h3>Line Following Robot</h3>
 <p>Arduino • Sensors • Embedded Programming</p>
 
-<a href="#" class="btn">GitHub</a>
-
 </div>
 
 </div>
 
-<div class="card" onclick="openPopup('QR Code Scanner','Real-time QR code detection system built using Python and OpenCV. The program scans camera frames and detects QR codes instantly.','QR Scanner.jpg')">
+<div class="card" onclick="openPopup('QR Code Scanner','Real-time QR code detection system built using Python and OpenCV.','QR Scanner.jpg')">
 
 <img src="QR Scanner.jpg">
 
@@ -396,13 +403,11 @@ I combine strong analytical thinking with practical hands-on experience in progr
 <h3>QR Code Scanner</h3>
 <p>Python • OpenCV • Computer Vision</p>
 
-<a href="#" class="btn">GitHub</a>
-
 </div>
 
 </div>
 
-<div class="card" onclick="openPopup('Machine Learning Regression','Machine learning project focused on regression models to analyze relationships between variables and predict numerical values using Python libraries.','ML.jpg')">
+<div class="card" onclick="openPopup('Machine Learning Regression','Machine learning regression model for predicting numerical data.','ML.jpg')">
 
 <img src="ML.jpg">
 
@@ -411,13 +416,11 @@ I combine strong analytical thinking with practical hands-on experience in progr
 <h3>ML Regression Project</h3>
 <p>Python • Machine Learning • Data Analysis</p>
 
-<a href="#" class="btn">GitHub</a>
-
 </div>
 
 </div>
 
-<div class="card" onclick="openPopup('OOP Calculator','Calculator built in Python using object-oriented programming concepts such as classes, methods, and modular code structure.','Calculator.jpg')">
+<div class="card" onclick="openPopup('OOP Calculator','Calculator built in Python using object-oriented programming concepts.','Calculator.jpg')">
 
 <img src="Calculator.jpg">
 
@@ -425,8 +428,6 @@ I combine strong analytical thinking with practical hands-on experience in progr
 
 <h3>Python OOP Calculator</h3>
 <p>Python • OOP • Programming</p>
-
-<a href="#" class="btn">GitHub</a>
 
 </div>
 
@@ -445,7 +446,7 @@ I combine strong analytical thinking with practical hands-on experience in progr
 <li>Artificial Intelligence Student – Faculty of Artificial Intelligence</li>
 <li>Arduino Robotics Projects</li>
 <li>Python Programming Projects</li>
-<li>Machine Learning and Data Analysis Practice</li>
+<li>Machine Learning Practice</li>
 
 </ul>
 
@@ -517,8 +518,6 @@ btn.innerHTML=document.body.classList.contains("dark")?"☀️":"🌙"
 
 }
 
-/* scroll animation */
-
 const sections=document.querySelectorAll("section")
 
 window.addEventListener("scroll",()=>{
@@ -538,29 +537,6 @@ sec.classList.add("show")
 })
 
 })
-
-/* smooth navbar scroll */
-
-document.querySelectorAll("nav a").forEach(link=>{
-
-link.addEventListener("click",function(e){
-
-e.preventDefault()
-
-const target=document.querySelector(this.getAttribute("href"))
-
-window.scrollTo({
-
-top:target.offsetTop-70,
-behavior:"smooth"
-
-})
-
-})
-
-})
-
-/* popup */
 
 function openPopup(titleText,descText,imgSrc){
 
